@@ -1,13 +1,13 @@
 name: Pipeline de Integración Continua - Ecosistema Retail Promart
 
-# El pipeline se disparará de forma automática en la nube con cada Push
+# El pipeline se disparará de forma automática en la nube con cada Push a main
 on:
   push:
     branches: [ main ]
 
 jobs:
   auditoria-y-construccion:
-    runs-on: ubuntu-latest # Se ejecuta de forma serverless en los servidores Linux de GitHub
+    runs-on: ubuntu-latest # Se ejecuta en los servidores Linux serverless de GitHub
 
     steps:
     # Step 1: Descargar el código de tu repositorio a la máquina virtual de GitHub
@@ -32,4 +32,4 @@ jobs:
     - name: Notificar Despliegue Exitoso
       run: |
         echo "=== Despliegue en Entorno de Pruebas Completado ==="
-        echo "Microservicio retail activo y listo para pruebas de estrés k6."
+        echo "Microservicio retail activo en Kubernetes y listo para pruebas de estrés k6."
