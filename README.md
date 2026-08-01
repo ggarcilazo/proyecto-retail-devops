@@ -28,8 +28,7 @@ El proyecto se divide en módulos especializados para simular un flujo de trabaj
 ### 🚀 Pipeline CI/CD Ejecutado Exitosamente en la Nube
 *Validación automática de la sintaxis del script de Bash y compilación exitosa del contenedor Docker de forma serverless en GitHub Actions.*
 
-[COLOCA AQUÍ TU CAPTURA DEL CHECK VERDE DE GITHUB ACTIONS]
-Ejemplo: `<img src="RUTA_DE_TU_IMAGEN_AQUÍ" width="100%"/>`
+<img width="2789" height="888" alt="Captura de pantalla 2026-08-01 173716" src="https://github.com/user-attachments/assets/0d4cbf6f-db65-4bb8-99de-883aeea273ec" />
 
 ### ☸️ Clúster de Kubernetes en Alta Disponibilidad (2 Réplicas Activas)
 *Demostración del comando `kubectl get pods` corriendo localmente sobre Docker Desktop, confirmando los dos Pods balanceados en estado Running.*
