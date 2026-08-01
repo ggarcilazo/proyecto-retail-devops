@@ -1,0 +1,149 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #1f2d3d;
+  background: #f4f6f8;
+}
+
+/* ---------- Barra superior ---------- */
+.topbar {
+  background: #0e2a47;
+  border-bottom: 3px solid #e8590c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #e8590c, #f08c00);
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.brand-tag {
+  color: #8fa8c0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.nav {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: #b9c9d8;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding-bottom: 0.3rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link.active {
+  color: #ffffff;
+  border-bottom: 2px solid #e8590c;
+}
+
+.cart-badge {
+  background: #e8590c;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 0.1rem 0.45rem;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* ---------- Contenido ---------- */
+.page {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 3rem;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #0e2a47;
+  color: #8fa8c0;
+  text-align: center;
+  padding: 1.1rem 1.5rem;
+  font-size: 0.8rem;
+  border-top: 3px solid #e8590c;
+}
+
+/* ---------- Notificación (toast) ---------- */
+.toast {
+  position: fixed;
+  bottom: 1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0e2a47;
+  color: #ffffff;
+  padding: 0.85rem 1.3rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(14, 42, 71, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 120;
+  animation: toast-in 0.25s ease;
+  max-width: 90vw;
+}
+
+.toast-check {
+  color: #69db7c;
+  font-weight: 700;
+}
+
+@keyframes toast-in {
+  from { transform: translateX(-50%) translateY(16px); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}

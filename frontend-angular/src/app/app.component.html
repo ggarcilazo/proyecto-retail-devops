@@ -1,0 +1,33 @@
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" [routerLink]="['/']">
+      <span class="brand-mark"></span>
+      <div class="brand-text">
+        <span class="brand-name">Retail</span>
+        <span class="brand-tag">Homecenter</span>
+      </div>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tienda</a>
+      <a class="nav-link" [routerLink]="['/carrito']" routerLinkActive="active">
+        Carrito
+        <span class="cart-badge" *ngIf="totalArticulos() > 0">{{ totalArticulos() }}</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <span>© 2026 Retail Homecenter · Plataforma de microservicios · Proyecto 2</span>
+</footer>
+
+<app-carrito-drawer></app-carrito-drawer>
+
+<div class="toast" *ngIf="notificacion()" [class.show]="notificacion()">
+  <span class="toast-check">✔</span>
+  {{ notificacion() }}
+</div>

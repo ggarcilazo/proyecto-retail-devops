@@ -1,0 +1,160 @@
+.hero {
+  background: linear-gradient(135deg, #0e2a47 0%, #164e7a 100%);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 2.4rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(14, 42, 71, 0.25);
+}
+
+.hero h1 {
+  margin: 0 0 0.4rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.hero p {
+  margin: 0;
+  color: #c7d8e8;
+  font-size: 1rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #0e2a47;
+}
+
+.section-count {
+  color: #8a9aab;
+  font-size: 0.85rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e3e8ee;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(14, 42, 71, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(14, 42, 71, 0.12);
+}
+
+.card-img {
+  height: 140px;
+  background: linear-gradient(160deg, #f8fafc, #eef3f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+}
+
+.card-img img {
+  max-height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.badge {
+  align-self: flex-start;
+  background: #eef3f8;
+  color: #0e2a47;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  border: 1px solid #dce5ee;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2d3d;
+  min-height: 2.4em;
+}
+
+.card-meta {
+  font-size: 0.8rem;
+}
+
+.stock {
+  color: #2b8a3e;
+}
+
+.sin-stock {
+  color: #c92a2a;
+}
+
+.card-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.currency {
+  font-size: 0.85rem;
+  color: #8a9aab;
+}
+
+.card-price strong {
+  font-size: 1.4rem;
+  color: #0e2a47;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.add-btn {
+  background: #e8590c;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-shadow: 0 3px 10px rgba(232, 89, 12, 0.3);
+}
+
+.add-btn:hover:not(:disabled) {
+  background: #d9480f;
+}
+
+.add-btn:disabled {
+  background: #e9ecef;
+  color: #8a9aab;
+  cursor: not-allowed;
+  box-shadow: none;
+}

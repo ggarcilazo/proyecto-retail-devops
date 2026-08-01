@@ -1,0 +1,63 @@
+<div class="overlay" *ngIf="abierto" (click)="cerrar()"></div>
+
+<aside class="drawer" [class.open]="abierto">
+  <header class="drawer-head">
+    <div>
+      <h2>Tu carrito</h2>
+      <span class="drawer-count">{{ totalArticulos() }} artículo{{ totalArticulos() === 1 ? '' : 's' }}</span>
+    </div>
+    <button class="close-btn" (click)="cerrar()" title="Cerrar">✕</button>
+  </header>
+
+  <div class="drawer-body" *ngIf="items().length > 0; else vacio">
+    <div class="item" *ngFor="let item of items()">
+      <img class="item-img" [src]="item.producto.imagen" [alt]="item.producto.nombre" />
+      <div class="item-info">
+        <span class="item-name">{{ item.producto.nombre }}</span>
+        <span class="item-price">S/ {{ item.producto.precio.toFixed(2) }}</span>
+        <div class="item-actions">
+          <button class="qty-btn" (click)="cambiarCantidad(item, -1)">−</button>
+          <span class="qty-num">{{ item.cantidad }}</span>
+          <button class="qty-btn" (click)="cambiarCantidad(item, 1)"
+                  [disabled]="item.cantidad >= item.producto.stock">+</button>
+          <button class="remove-btn" (click)="quitar(item)" title="Quitar">✕</button>
+        </div>
+      </div>
+      <strong class="item-total">S/ {{ (item.producto.precio * item.cantidad).toFixed(2) }}</strong>
+    </div>
+  </div>
+
+  <ng-template #vacio>
+    <div class="empty">
+      <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <p>Tu carrito está vacío.<br/>Agrega productos desde la tienda.</p>
+      <button class="empty-btn" (click)="cerrar()">Ir a la tienda</button>
+    </div>
+  </ng-template>
+
+  <footer class="drawer-foot" *ngIf="items().length > 0">
+    <div class="foot-row">
+      <span>Subtotal</span>
+      <span>S/ {{ subtotal().toFixed(2) }}</span>
+    </div>
+    <div class="foot-total">
+      <span>Total</span>
+      <strong>S/ {{ total().toFixed(2) }}</strong>
+    </div>
+    <a class="checkout-btn" [routerLink]="['/pago']" (click)="cerrar()">Proceder al Pago</a>
+    <a class="view-cart" [routerLink]="['/carrito']" (click)="cerrar()">Ver carrito completo</a>
+  </footer>
+</aside>
+
+<button class="fab" *ngIf="totalArticulos() > 0" (click)="abrir()" title="Abrir carrito">
+  <svg class="fab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="21" r="1"></circle>
+    <circle cx="20" cy="21" r="1"></circle>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+  </svg>
+  <span class="fab-badge">{{ totalArticulos() }}</span>
+</button>

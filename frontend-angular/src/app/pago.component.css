@@ -1,0 +1,271 @@
+:host {
+  display: block;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #1f2d3d;
+}
+
+.page-head {
+  margin-bottom: 1.6rem;
+}
+
+.page-head h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #0e2a47;
+}
+
+.page-sub {
+  margin: 0;
+  color: #67788a;
+  font-size: 0.95rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+/* ---------- Resumen ---------- */
+.resumen {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(14, 42, 71, 0.08);
+  border: 1px solid #e3e8ee;
+  padding: 1.5rem 1.4rem;
+}
+
+.resumen h2 {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  color: #0e2a47;
+}
+
+.linea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+.linea-prod {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.linea-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid #e3e8ee;
+  object-fit: cover;
+  background: #f8fafc;
+}
+
+.linea.muted {
+  color: #8a9aab;
+}
+
+.pago-ok {
+  margin: 1rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: #e7f6ec;
+  border: 1px solid #b7e4c7;
+  color: #2b8a3e;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.total-linea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #eef1f4;
+}
+
+.total-linea strong {
+  font-size: 1.3rem;
+  color: #0e2a47;
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 1.2rem;
+  color: #0e2a47;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.volver:hover {
+  color: #e8590c;
+}
+
+/* ---------- Caja de pago ---------- */
+.pago-box {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(14, 42, 71, 0.08);
+  border: 1px solid #e3e8ee;
+  padding: 1.5rem 1.4rem;
+}
+
+.pago-box h2 {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  color: #0e2a47;
+}
+
+.metodo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem;
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  background: #fbfcfd;
+}
+
+.tarjeta {
+  width: 34px;
+  height: 34px;
+  color: #0e2a47;
+  flex-shrink: 0;
+}
+
+.metodo-nombre {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.metodo-num {
+  display: block;
+  color: #8a9aab;
+  font-size: 0.82rem;
+}
+
+.pay-btn {
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 0.95rem;
+  background: #e8590c;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s ease;
+  box-shadow: 0 3px 10px rgba(232, 89, 12, 0.35);
+}
+
+.pay-btn:hover:not(:disabled) {
+  background: #d9480f;
+}
+
+.pay-btn:disabled {
+  background: #f0a175;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.secure {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #8a9aab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.lock {
+  width: 13px;
+  height: 13px;
+  color: #8a9aab;
+}
+
+/* ---------- Resultado ---------- */
+.resultado {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #e7f6ec;
+  border: 1px solid #b7e4c7;
+  color: #2b8a3e;
+}
+
+.resultado.rechazado {
+  background: #fdeaea;
+  border-color: #f5c2c2;
+  color: #c92a2a;
+}
+
+.resultado h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.resultado p {
+  margin: 0.2rem 0;
+  font-size: 0.88rem;
+}
+
+.resultado .meta {
+  color: inherit;
+  opacity: 0.75;
+  font-size: 0.78rem;
+  word-break: break-all;
+}
+
+.error-box {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fdeaea;
+  border: 1px solid #f5c2c2;
+  color: #c92a2a;
+}
+
+.error-box h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.error-box p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 820px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

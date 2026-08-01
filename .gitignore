@@ -1,0 +1,23 @@
+# Node / Angular
+node_modules/
+dist/
+.angular/
+*.log
+
+# Java / Maven
+target/
+*.class
+
+# Pruebas de carga - reportes generados
+performance-tests/*.jtl
+performance-tests/reporte-html/
+performance-tests/reporte_consumo_ram.txt
+
+# Sistemas operativos
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml

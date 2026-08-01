@@ -1,0 +1,42 @@
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Bienvenido a Retail Homecenter</h1>
+    <p>Todo lo que necesitas para construir y mejorar tu hogar, al mejor precio.</p>
+  </div>
+</section>
+
+<div class="section-head">
+  <h2>Productos destacados</h2>
+  <span class="section-count">{{ productos.length }} artículos disponibles</span>
+</div>
+
+<div class="grid">
+  <article class="card" *ngFor="let producto of productos">
+    <div class="card-img">
+      <img [src]="producto.imagen" [alt]="producto.nombre" />
+    </div>
+    <div class="card-body">
+      <span class="badge">{{ producto.categoria }}</span>
+      <h3 class="card-title">{{ producto.nombre }}</h3>
+      <div class="card-meta">
+        <span class="stock" [class.sin-stock]="producto.stock === 0">
+          {{ producto.stock > 0 ? 'En stock: ' + producto.stock + ' uds.' : 'Agotado' }}
+        </span>
+      </div>
+      <div class="card-price">
+        <span class="currency">S/</span>
+        <strong>{{ producto.precio.toFixed(2) }}</strong>
+      </div>
+      <div class="card-actions">
+        <button
+          class="add-btn"
+          [disabled]="producto.stock === 0 || (enCarrito().get(producto.id) ?? 0) >= producto.stock"
+          (click)="agregar(producto)">
+          {{ (enCarrito().get(producto.id) ?? 0) > 0
+            ? 'Agregar otro (+' + enCarrito().get(producto.id) + ')'
+            : 'Agregar al carrito' }}
+        </button>
+      </div>
+    </div>
+  </article>
+</div>

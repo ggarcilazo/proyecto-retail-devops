@@ -1,0 +1,70 @@
+<div class="page-head">
+  <h1>Pago seguro</h1>
+  <p class="page-sub">Confirma el total de tu compra y procesa el pago.</p>
+</div>
+
+<div class="layout">
+
+  <section class="resumen">
+    <h2>Detalle de la compra</h2>
+    <div class="linea" *ngFor="let item of items()">
+      <div class="linea-prod">
+        <img class="linea-img" [src]="item.producto.imagen" [alt]="item.producto.nombre" />
+        <span>{{ item.cantidad }}× {{ item.producto.nombre }}</span>
+      </div>
+      <span>S/ {{ (item.producto.precio * item.cantidad).toFixed(2) }}</span>
+    </div>
+    <div class="linea muted"><span>Envío</span><span>Gratis</span></div>
+    <div class="linea muted"><span>IGV (18%)</span><span>S/ {{ igv().toFixed(2) }}</span></div>
+    <div class="total-linea">
+      <span>Total a pagar</span>
+      <strong>S/ {{ total().toFixed(2) }}</strong>
+    </div>
+
+    <a class="volver" [routerLink]="['/carrito']">← Volver al carrito</a>
+  </section>
+
+  <aside class="pago-box">
+    <h2>Método de pago</h2>
+    <div class="metodo">
+      <svg class="tarjeta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="4" width="22" height="16" rx="2"></rect>
+        <line x1="1" y1="10" x2="23" y2="10"></line>
+      </svg>
+      <div>
+        <span class="metodo-nombre">Tarjeta de crédito/débito</span>
+        <span class="metodo-num">Visa •••• 4242</span>
+      </div>
+    </div>
+
+    <button class="pay-btn" (click)="confirmarPago()" [disabled]="procesando || items().length === 0">
+      <span *ngIf="procesando" class="spinner"></span>
+      {{ procesando ? 'Procesando pago...' : 'Confirmar y Pagar S/ ' + total().toFixed(2) }}
+    </button>
+
+    <p *ngIf="resultado?.estado === 'APROBADO'" class="pago-ok">
+      ✔ Pago aprobado correctamente. Tu carrito se ha vaciado.
+    </p>
+
+    <p class="secure">
+      <svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      Transacción segura y cifrada
+    </p>
+
+    <div *ngIf="resultado" class="resultado" [class.rechazado]="resultado.estado === 'RECHAZADO'">
+      <h3>{{ resultado.estado === 'APROBADO' ? '✔ Pago aprobado' : '✖ Pago rechazado' }}</h3>
+      <p>{{ resultado.mensaje }}</p>
+      <p class="meta">Transacción: {{ resultado.idTransaccion }}</p>
+      <p class="meta">Monto: S/ {{ resultado.monto.toFixed(2) }} · Cliente: {{ resultado.clienteId }}</p>
+    </div>
+
+    <div *ngIf="error" class="error-box">
+      <h3>✖ Error de conexión</h3>
+      <p>{{ error }}</p>
+    </div>
+  </aside>
+
+</div>
