@@ -17,9 +17,9 @@ El proyecto se divide en módulos especializados para simular un flujo de trabaj
 
 *   **📁 `infra-devops/` (Tus Entregables):** Contiene la lógica de empaquetado en contenedores de Docker, la orquestación y balanceo de carga en un clúster local de Kubernetes, y los scripts automatizados de mantenimiento de servidores en Bash.
 *   **📁 `.github/workflows/` (Tu Automatización Nube):** Pipeline serverless de integración continua (CI/CD) que valida la sintaxis y compila el proyecto de forma automática en los servidores de GitHub con cada subida de código.
-*   **📁 `frontend-angular/` (Módulo de tu Compañero):** Código de la interfaz de usuario de canales digitales que simula la vista del carrito de compras de la tienda retail.
-*   **📁 `backend-java-pagos/` (Módulo de tu Compañero):** Microservicio transaccional e independiente encargado de procesar y validar las intenciones de pago de la plataforma web.
-*   **📁 `performance-tests/` (Módulo de tu Compañero):** Scripts de automatización de pruebas de carga de nivel industrial redactados en **k6** para simular escenarios de alta concurrencia masiva (Cyber Days).
+*   **📁 `frontend-angular/` (Módulo del Compañero):** Código de la interfaz de usuario de canales digitales que simula la vista del carrito de compras de la tienda retail.
+*   **📁 `backend-java-pagos/` (Módulo del Compañero):** Microservicio transaccional e independiente encargado de procesar y validar las intenciones de pago de la plataforma web.
+*   **📁 `performance-tests/` (Módulo del Compañero):** Scripts de automatización de pruebas de carga de nivel industrial redactados en **k6** para simular escenarios de alta concurrencia masiva (Cyber Days).
 
 ---
 
@@ -38,8 +38,7 @@ El proyecto se divide en módulos especializados para simular un flujo de trabaj
 ### 📊 Pruebas de Estrés y Rendimiento de Alta Concurrencia (k6)
 *Simulación de un escenario de alta demanda masiva (Cyber Days) con 500 usuarios virtuales concurrentes golpeando las APIs del clúster de forma simultánea. Se valida que el sistema opere con un 100% de éxito y tiempos de respuesta inferiores a los 200ms.*
 
-[COLOCA AQUÍ LA CAPTURA DE PANTALLA QUE SUBA TU COMPAÑERO CON EL REPORTE FINAL DE LA CONSOLA DE k6]
-
+<img width="1100" height="760" alt="cc5831ce-d0ef-496d-834b-d7edde274bd7" src="https://github.com/user-attachments/assets/5477f3e3-c3f9-4e42-9ecd-1764e9c29dd5" />
 
 
 ---
