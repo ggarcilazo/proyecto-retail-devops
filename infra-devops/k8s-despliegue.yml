@@ -5,7 +5,7 @@ metadata:
   labels:
     app: retail
 spec:
-  replicas: 2 # Kubernetes levantará 2 copias idénticas del servidor para soportar caídas
+  replicas: 2 # Kubernetes levantará 2 copias idénticas del servidor para soportar caídas y balanceo de carga
   selector:
     matchLabels:
       app: retail
