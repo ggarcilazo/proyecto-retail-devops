@@ -12,22 +12,16 @@ jobs:
     - name: Clonar repositorio en la nube
       uses: actions/checkout@v4
 
-    - name: Debug - ver estructura del repo
-      run: |
-        pwd
-        ls -la
-        find . -name "mantenimiento_servidor.sh"
-
     - name: Validar sintaxis del script de soporte (.sh)
       run: |
         echo "=== Iniciando Linter de Bash ==="
-        bash -n ./proyecto-retail-devops/infra-devops/mantenimiento_servidor.sh
+        bash -n ./infra-devops/mantenimiento_servidor.sh
         echo "[OK] Sintaxis de Bash validada con éxito."
 
     - name: Compilar Contenedor de Canales Digitales
       run: |
         echo "=== Compilando imagen Docker de Promart ==="
-        docker build -t retail-app:latest ./proyecto-retail-devops/infra-devops/
+        docker build -t retail-app:latest ./infra-devops/
         echo "[OK] Contenedor Docker compilado y verificado sin vulnerabilidades."
 
     - name: Notificar Despliegue Exitoso
