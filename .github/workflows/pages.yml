@@ -40,7 +40,7 @@ jobs:
       - name: Subir artefacto de Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/frontend-angular
+          path: frontend-angular/dist/frontend-angular
 
   deploy:
     needs: build
