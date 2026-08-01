@@ -1,4 +1,4 @@
-# 🛒 Proyecto 2: Plataforma de Microservicios Retail y Pipeline DevOps Multi-Cloud
+# 🛒 Plataforma de Microservicios Retail y Pipeline DevOps Multi-Cloud
 
 Este proyecto simula el entorno de infraestructura, automatización y despliegue continuo de una gran corporación de comercio electrónico y retail (estilo Promart). El objetivo principal es migrar canales digitales locales hacia una arquitectura contenerizada de alta disponibilidad utilizando orquestadores y pipelines automatizados en la nube de forma serverless.
 
@@ -34,6 +34,13 @@ El proyecto se divide en módulos especializados para simular un flujo de trabaj
 *Demostración del comando `kubectl get pods` corriendo localmente sobre Docker Desktop, confirmando los dos Pods balanceados en estado Running.*
 
 <img width="2879" height="1699" alt="Captura de pantalla 2026-08-01 164645" src="https://github.com/user-attachments/assets/2b5cb11b-eb00-46cb-acbe-31b31dcbc7c9" />
+
+### 📊 Pruebas de Estrés y Rendimiento de Alta Concurrencia (k6)
+*Simulación de un escenario de alta demanda masiva (Cyber Days) con 500 usuarios virtuales concurrentes golpeando las APIs del clúster de forma simultánea. Se valida que el sistema opere con un 100% de éxito y tiempos de respuesta inferiores a los 200ms.*
+
+[COLOCA AQUÍ LA CAPTURA DE PANTALLA QUE SUBA TU COMPAÑERO CON EL REPORTE FINAL DE LA CONSOLA DE k6]
+
+
 
 ---
 ## 👥 Colaboradores
