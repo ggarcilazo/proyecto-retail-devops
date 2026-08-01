@@ -123,7 +123,12 @@ jobs:
           cat /tmp/backend.log
           exit 1
 
+      - name: Instalar k6 en el runner
+        run: |
+          curl -sL https://github.com/grafana/k6/releases/download/v0.49.0/k6-v0.49.0-linux-amd64.tar.gz | tar xz
+          sudo mv k6-v0.49.0-linux-amd64/k6 /usr/local/bin/
+          k6 version
+
       - name: Ejecutar test de carga k6 contra la API de pagos
-        uses: grafana/k6-action@v0.3.1
-        with:
-          filename: performance-tests/test_estres.js
+        working-directory: performance-tests
+        run: k6 run test_estres.js
