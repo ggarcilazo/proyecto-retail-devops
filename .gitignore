@@ -12,6 +12,8 @@ target/
 performance-tests/*.jtl
 performance-tests/reporte-html/
 performance-tests/reporte_consumo_ram.txt
+performance-tests/resultados_k6.json
+performance-tests/k6_salida.txt
 
 # Sistemas operativos
 .DS_Store
